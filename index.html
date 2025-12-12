@@ -2,44 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>RTIS Analysis - SPM Tool (Full)</title>
+  <title>RTIS Analysis - SPM Tool (Final - Bold)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     * { box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     body { margin: 0; padding: 0; background: #f5f7fb; color: #111827; }
     .page { max-width: 1200px; margin: 18px auto 40px; padding: 16px; }
     .card { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: 0 4px 14px rgba(15,23,42,0.06); margin-bottom: 18px; }
-    h1 { font-size: 1.3rem; margin: 0 0 8px; text-align: center; }
-    #mainHeading { font-weight: 700; text-decoration: underline; }
-    h2 { font-size: 1rem; margin: 0 0 10px; }
-    .subtitle { font-size: 0.9rem; text-align: center; color: #555; margin-bottom: 18px; }
+    h1 { font-size: 1.4rem; margin: 0 0 8px; text-align: center; font-weight:800; }
+    #mainHeading { font-weight: 900; text-decoration: underline; }
+    h2 { font-size: 1.05rem; margin: 0 0 10px; font-weight:800; }
+    .subtitle { font-size: 0.95rem; text-align: center; color: #555; margin-bottom: 18px; }
     .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px 18px; margin-bottom: 12px; }
-    .field { display:flex; flex-direction:column; gap:4px; font-size:0.9rem; }
-    label { font-weight:600; }
+    .field { display:flex; flex-direction:column; gap:4px; font-size:0.95rem; }
+    label { font-weight:800; }
     input[type="date"], input[type="text"], input[type="number"], select, input[type="file"], textarea {
-      border-radius:6px; border:1px solid #cbd5e1; padding:6px 8px; font-size:0.9rem; background:#f8fafc;
+      border-radius:6px; border:1px solid #cbd5e1; padding:8px 10px; font-size:0.95rem; background:#f8fafc;
     }
-    textarea { min-height:80px; resize:vertical; }
+    textarea { min-height:100px; resize:vertical; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; margin-bottom:8px; margin-top:8px; }
-    button { border:none; border-radius:999px; padding:8px 18px; font-size:0.9rem; cursor:pointer; font-weight:600; display:inline-flex; align-items:center; gap:6px; }
-    #plotBtn { background: #2563eb; color:#fff; } #plotBtn:hover { background:#1d4ed8; }
+    button { border:none; border-radius:999px; padding:10px 18px; font-size:0.95rem; cursor:pointer; font-weight:800; display:inline-flex; align-items:center; gap:8px; }
+    #plotBtn { background: #111827; color:#fff; } #plotBtn:hover { background:#0b1220; }
     #printBtn { background:#e2e8f0; color:#111827; } #printBtn:hover { background:#cbd5e1; }
-    #printIrregBtn { background:#f97316; color:#fff; } #printIrregBtn:hover { background:#ea580c; }
-    .chart-card { padding:16px; border-radius:12px; background:#fff; border:1px solid #e5e7eb; margin-top:10px; }
-    .chart-wrapper { position:relative; width:100%; height:380px; background: #ffffff !important; }
+    #printIrregBtn { background:#b91c1c; color:#fff; } #printIrregBtn:hover { background:#991516; }
+    .chart-card { padding:18px; border-radius:12px; background:#fff; border:1px solid #e5e7eb; margin-top:10px; }
+    .chart-wrapper { position:relative; width:100%; height:420px; background: #ffffff !important; }
     canvas { width:100%; height:100%; background: #ffffff !important; filter: none !important; -webkit-filter: none !important; mix-blend-mode: normal !important; }
-    .footer-note { margin-top:8px; font-size:0.8rem; color:#6b7280; }
-    .stoppage-card { border-radius:10px; border:1px solid #e5e7eb; background:#fff; padding:10px; margin-bottom:10px; }
-    .stoppage-title { font-size:0.95rem; font-weight:700; margin-bottom:8px; }
-    .stoppage-chart-wrapper { position:relative; width:100%; height:300px; background:#fff !important; }
-    .stoppage-callouts { margin-top:8px; font-size:0.9rem; color:#374151; display:flex; gap:14px; flex-wrap:wrap; }
-    .stoppage-callouts .label { font-weight:700; }
-    #perfSummaryTable, #summaryTable { width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:6px; }
-    #perfSummaryTable th, #perfSummaryTable td, #summaryTable th, #summaryTable td { border:1px solid #e5e7eb; padding:4px 6px; text-align:left; }
-    #perfSummaryTable th { text-align:center; background:#f3f4f6; font-weight:600; }
-    #perfSummaryTable tr td:first-child { width:30%; font-weight:600; background:#f9fafb; }
-    #summaryTable th { background:#e5e7eb; font-weight:600; text-align:center; }
-    .footer-print { text-align:center; font-size:0.75rem; color:#6b7280; padding:6px 0 10px; margin-top:10px; }
+    .footer-note { margin-top:10px; font-size:0.92rem; color:#374151; font-weight:700; }
+    .stoppage-card { border-radius:10px; border:1px solid #e5e7eb; background:#fff; padding:12px; margin-bottom:12px; }
+    .stoppage-title { font-size:0.98rem; font-weight:900; margin-bottom:8px; }
+    .stoppage-chart-wrapper { position:relative; width:100%; height:320px; background:#fff !important; }
+    .stoppage-callouts { margin-top:10px; font-size:0.95rem; color:#374151; display:flex; gap:12px; flex-wrap:wrap; font-weight:700; }
+    .stoppage-callouts .label { font-weight:900; }
+    #perfSummaryTable, #summaryTable { width:100%; border-collapse:collapse; font-size:0.95rem; margin-top:6px; }
+    #perfSummaryTable th, #perfSummaryTable td, #summaryTable th, #summaryTable td { border:1px solid #e5e7eb; padding:6px 8px; text-align:left; }
+    #perfSummaryTable th { text-align:center; background:#f3f4f6; font-weight:900; }
+    #perfSummaryTable tr td:first-child { width:30%; font-weight:900; background:#f9fafb; }
+    #summaryTable th { background:#e5e7eb; font-weight:900; text-align:center; }
+    .footer-print { text-align:center; font-size:0.85rem; color:#6b7280; padding:8px 0 10px; margin-top:10px; font-weight:700; }
     @media print {
       body { background:#fff }
       .page { margin:0; max-width:100% }
@@ -53,14 +53,14 @@
   <div class="page">
     <div class="card">
       <h1 id="mainHeading">RTIS Analysis</h1>
-      <div class="subtitle">Web SPM / RTIS report similar to PDF output</div>
+      <div class="subtitle">Web SPM / RTIS report (final — bold & high visibility)</div>
 
       <div class="form-grid">
         <div class="field">
           <label for="fileInput">SPM CSV (1-second data):</label>
           <input type="file" id="fileInput" accept=".csv" />
-          <span style="font-size:0.75rem;color:#6b7280;">
-            Required columns: <b>Logging Time</b> (or <b>Gps time</b>), <b>Speed</b>, <b>distFromPrevLatLng</b>, <b>stationCode</b>.
+          <span style="font-size:0.85rem;color:#374151;font-weight:700;">
+            Required columns: <b>Logging Time</b> (or <b>Gps time</b), <b>Speed</b>, <b>distFromPrevLatLng</b>, <b>stationCode</b>.
           </span>
         </div>
 
@@ -81,8 +81,8 @@
         <div class="field">
           <label for="hFileInput">H Events Excel (upload):</label>
           <input type="file" id="hFileInput" accept=".xlsx,.xls,.csv" />
-          <span style="font-size:0.75rem;color:#6b7280;">
-            Sheet must mark `H` rows and have the next-row `A` (parser takes A-row speed; fallback: numeric on H row).
+          <span style="font-size:0.85rem;color:#374151;font-weight:700;">
+            Sheet must mark `H` rows and have the next-row `A` (parser takes A-row speed; fallback: numeric on H-row).
           </span>
         </div>
 
@@ -104,7 +104,7 @@
       <div class="chart-card">
         <div class="chart-wrapper"><canvas id="speedChart"></canvas></div>
         <div class="footer-note">
-          X-axis: <b>Logging Time</b> (single A-mark per station shown). H events show speed numeric callouts again. Stops are single marker per station.
+          X-axis: <b>Logging Time</b> (single A-mark per station shown). H events show speed numeric callouts. Stops are single marker per station.
         </div>
       </div>
     </div>
@@ -164,19 +164,49 @@
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <script>
-    // HOME SIGNAL IMAGE (your uploaded file path)
-    const HOME_SIGNAL_SRC = "/mnt/data/home signal.jpg";
+    // HOME SIGNAL IMAGE PATH (adjust if necessary)
+    const HOME_SIGNAL_PATH = "/mnt/data/home signal.jpg";
+    let HOME_SIGNAL_DATAURL = null;
 
-    // Globals
+    // ---------- Chart Defaults: Bold & high-visibility ----------
+    Chart.defaults.font.size = 12;
+    Chart.defaults.font.weight = "700";
+    Chart.defaults.color = "#0b1220";
+    Chart.defaults.elements.line.borderWidth = 3;
+    Chart.defaults.elements.line.tension = 0.25;
+    Chart.defaults.elements.point.radius = 6;
+    Chart.defaults.elements.point.hoverRadius = 8;
+    Chart.defaults.elements.point.borderWidth = 2;
+    Chart.defaults.scale.grid.color = "#cfdde6";
+    Chart.defaults.scale.grid.lineWidth = 1.2;
+
+    // ---------- Globals ----------
     let mainSpeedChart, distance10Chart;
     let stoppageChartsInstances = [];
     let rawData = null;
     let bftInfo = null, bptInfo = null, stoppageInfoList = [], mpsMaxInfo = null;
     const LIMIT_1000M = 60;
-    const DEFAULT_COLOR = "#2563eb";
+    const DEFAULT_COLOR = "#0b5ed7";
     let hEvents = []; // {rowIdx,eventTimeStr,distanceKm,aSpeed,mappedIdx,mappedDistKm,stationCode}
 
-    // ---------- helpers ----------
+    // load home signal as dataURL
+    async function loadHomeSignalDataUrl() {
+      try {
+        const resp = await fetch(HOME_SIGNAL_PATH);
+        if (!resp.ok) { console.warn("Home signal image not found at", HOME_SIGNAL_PATH); return null; }
+        const blob = await resp.blob();
+        return await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.readAsDataURL(blob);
+        });
+      } catch (e) {
+        console.warn("Error loading home signal image:", e);
+        return null;
+      }
+    }
+
+    // ---------- CSV parser ----------
     function csvSplit(line) {
       const res = []; let cur = "", inQuotes = false;
       for (let i = 0; i < line.length; i++) {
@@ -301,7 +331,7 @@
       return { dist: distanceKm[bestIdx], speed: speeds[bestIdx], idx: bestIdx };
     }
 
-    // ---------- Chart plugins ----------
+    // ---------- Plugins (bold callouts, stop labels, BFT/BPT badges, H callouts) ----------
     const enhancedWhiteCanvasPlugin = {
       id: "enhancedWhiteCanvas",
       beforeInit(chart) {
@@ -329,7 +359,27 @@
       }
     };
 
-    // H callouts on main chart (compact white badge with number)
+    function roundRect(ctx, x, y, w, h, r, fill) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+      if (fill) ctx.fill();
+    }
+    function roundRectStroke(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+      ctx.stroke();
+    }
+
     const hCalloutsPlugin = {
       id: "hCalloutsPlugin",
       afterDatasetsDraw(chart) {
@@ -353,11 +403,11 @@
             else if (raw && typeof raw === "number") speedText = Math.round(raw).toString();
             if (!speedText) return;
 
-            ctx.font = "12px system-ui, Arial";
-            const padding = 6;
+            ctx.font = "bold 13px system-ui, Arial";
+            const padding = 8;
             const textWidth = Math.min(200, ctx.measureText(speedText).width);
             const boxW = textWidth + padding * 2;
-            const boxH = 22;
+            const boxH = 26;
             let boxX = px + 8;
             let boxY = py - boxH/2 - 8;
             if (boxX + boxW > chart.width - 8) boxX = px - boxW - 8;
@@ -365,10 +415,10 @@
             if (boxY < 8) boxY = 8;
 
             ctx.fillStyle = "#ffffff";
-            roundRect(ctx, boxX, boxY, boxW, boxH, 6, true);
-            ctx.strokeStyle = "rgba(0,0,0,0.75)";
-            ctx.lineWidth = 0.9;
-            roundRectStroke(ctx, boxX, boxY, boxW, boxH, 6);
+            roundRect(ctx, boxX, boxY, boxW, boxH, 8, true);
+            ctx.strokeStyle = "rgba(0,0,0,0.85)";
+            ctx.lineWidth = 1.4;
+            roundRectStroke(ctx, boxX, boxY, boxW, boxH, 8);
             ctx.fillStyle = "#111827";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -376,13 +426,6 @@
           });
         }
         ctx.restore();
-
-        function roundRect(ctx, x, y, w, h, r, fill) {
-          ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); if (fill) ctx.fill();
-        }
-        function roundRectStroke(ctx, x, y, w, h, r) {
-          ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); ctx.stroke();
-        }
       }
     };
 
@@ -392,42 +435,42 @@
         if (chart.canvas.id !== "distance10Chart") return;
         if (!bftInfo && !bptInfo) return;
         const ctx = chart.ctx, xScale = chart.scales.x, yScale = chart.scales.y, baseData = chart.data.datasets[0].data;
-        ctx.save(); ctx.font = "700 12px system-ui, Arial"; ctx.textAlign = "center"; ctx.textBaseline = "bottom";
+        ctx.save(); ctx.font = "bold 14px system-ui, Arial"; ctx.textAlign = "center"; ctx.textBaseline = "bottom";
         if (bftInfo && typeof bftInfo.chartIndex === "number" && bftInfo.chartIndex >= 0) {
           const idx = bftInfo.chartIndex;
           const x = xScale.getPixelForValue(idx);
           const y = yScale.getPixelForValue(baseData[idx]);
-          const text = `BFT start: ${Math.round(bftInfo.startSpeed)} KMPH`;
-          drawCallout(ctx, x, y - 8, text);
+          const text = `BFT START ${Math.round(bftInfo.startSpeed)} KMPH`;
+          drawCallout(ctx, x, y - 10, text);
         }
         if (bptInfo && typeof bptInfo.chartIndex === "number" && bptInfo.chartIndex >= 0) {
           const idx = bptInfo.chartIndex;
           const x = xScale.getPixelForValue(idx);
           const y = yScale.getPixelForValue(baseData[idx]);
-          const text = `BPT start: ${Math.round(bptInfo.startSpeed)} KMPH`;
-          drawCallout(ctx, x, y - 8, text);
+          const text = `BPT START ${Math.round(bptInfo.startSpeed)} KMPH`;
+          drawCallout(ctx, x, y - 10, text);
         }
         ctx.restore();
 
         function drawCallout(ctx, x, y, text) {
-          const padding = 8;
-          ctx.font = "700 12px system-ui, Arial";
+          const padding = 10;
+          ctx.font = "bold 13px system-ui, Arial";
           const w = ctx.measureText(text).width + padding * 2;
-          const h = 28;
+          const h = 30;
           let bx = x - w/2;
           let by = y - h;
           if (bx < 8) bx = 8;
           if (bx + w > ctx.canvas.width - 8) bx = ctx.canvas.width - 8 - w;
           if (by < 8) by = 8;
           ctx.fillStyle = "#111827";
-          roundRect(ctx, bx, by, w, h, 8, true);
+          roundRect(ctx, bx, by, w, h, 10, true);
           ctx.beginPath();
-          ctx.moveTo(x - 8, by + h);
-          ctx.lineTo(x + 8, by + h);
+          ctx.moveTo(x - 10, by + h);
+          ctx.lineTo(x + 10, by + h);
           ctx.lineTo(x, by + h + 10);
           ctx.closePath();
           ctx.fill();
-          ctx.fillStyle = "#fff";
+          ctx.fillStyle = "#ffffff";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           ctx.fillText(text, bx + w/2, by + h/2);
@@ -445,14 +488,13 @@
         if (idx == null || idx < 0 || idx >= data.length) return;
         const x = xScale.getPixelForValue(idx), y = yScale.getPixelForValue(data[idx]);
         const mpsVal = getMpsValue(); if (!mpsVal) return;
-        ctx.save(); ctx.fillStyle = "red"; ctx.font = "10px sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "bottom";
+        ctx.save(); ctx.fillStyle = "red"; ctx.font = "bold 11px system-ui, Arial"; ctx.textAlign = "center"; ctx.textBaseline = "bottom";
         const text = `MPS ${mpsVal.toFixed(0)} Max ${mpsMaxInfo.speed.toFixed(0)}`;
-        ctx.fillText(text, x, y - 6);
-        ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+        ctx.fillText(text, x, y - 8);
+        ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill(); ctx.restore();
       }
     };
 
-    // plugin draws station labels under stop markers (one per station)
     const stopLabelsPlugin = {
       id: "stopLabelsPlugin",
       afterDatasetsDraw(chart) {
@@ -464,13 +506,14 @@
         const meta = chart.getDatasetMeta(dsIndex);
         if (!meta || !meta.data) { ctx.restore(); return; }
 
-        ctx.font = "11px system-ui, Arial";
+        ctx.font = "bold 12px system-ui, Arial";
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
 
         meta.data.forEach(pt => {
           try {
-            const raw = pt.element && pt.element.$context ? pt.element.$context.raw : (pt && pt.$context ? pt.$context.raw : null);
+            // Chart.js v4 element access
+            const raw = pt && pt.$context && pt.$context.raw ? pt.$context.raw : (pt && pt._model ? pt._model : null);
             const station = raw && raw.meta && raw.meta.station ? String(raw.meta.station) : "";
             if (!station) return;
 
@@ -478,11 +521,11 @@
             const py = pt.y;
 
             const text = station;
-            const paddingX = 6;
-            const paddingY = 4;
-            const tw = Math.min(160, ctx.measureText(text).width);
+            const paddingX = 8;
+            const paddingY = 6;
+            const tw = Math.min(180, ctx.measureText(text).width);
             const boxW = tw + paddingX * 2;
-            const boxH = 18;
+            const boxH = 22;
 
             let boxX = px - boxW/2;
             let boxY = py + 8;
@@ -491,10 +534,10 @@
             if (boxX + boxW > chart.width - 6) boxX = chart.width - 6 - boxW;
 
             ctx.fillStyle = "#ffffff";
-            roundRect(ctx, boxX, boxY, boxW, boxH, 6, true);
-            ctx.strokeStyle = "rgba(0,0,0,0.65)";
-            ctx.lineWidth = 0.9;
-            roundRectStroke(ctx, boxX, boxY, boxW, boxH, 6);
+            roundRect(ctx, boxX, boxY, boxW, boxH, 8, true);
+            ctx.strokeStyle = "rgba(0,0,0,0.85)";
+            ctx.lineWidth = 1.2;
+            roundRectStroke(ctx, boxX, boxY, boxW, boxH, 8);
 
             ctx.fillStyle = "#111827";
             ctx.textAlign = "center";
@@ -509,28 +552,7 @@
 
     Chart.register(enhancedWhiteCanvasPlugin, hCalloutsPlugin, bftBptCalloutsPlugin, mpsMaxPlugin, stopLabelsPlugin);
 
-    // ---------- utility draw helpers ----------
-    function roundRect(ctx, x, y, w, h, r, fill) {
-      ctx.beginPath();
-      ctx.moveTo(x + r, y);
-      ctx.arcTo(x + w, y, x + w, y + h, r);
-      ctx.arcTo(x + w, y + h, x, y + h, r);
-      ctx.arcTo(x, y + h, x, y, r);
-      ctx.arcTo(x, y, x + w, y, r);
-      ctx.closePath();
-      if (fill) ctx.fill();
-    }
-    function roundRectStroke(ctx, x, y, w, h, r) {
-      ctx.beginPath();
-      ctx.moveTo(x + r, y);
-      ctx.arcTo(x + w, y, x + w, y + h, r);
-      ctx.arcTo(x + w, y + h, x, y + h, r);
-      ctx.arcTo(x, y + h, x, y, r);
-      ctx.arcTo(x, y, x + w, y, r);
-      ctx.closePath();
-      ctx.stroke();
-    }
-
+    // ---------- Helper find index by time ----------
     function findClosestIndexByTimeLabel(targetTimeStr) {
       if (!rawData || !rawData.timeLabels || rawData.timeLabels.length === 0) return null;
       const targetSec = parseTimeToSecondsOfDay(targetTimeStr);
@@ -582,7 +604,7 @@
       });
     }
 
-    // ---------- plotting functions ----------
+    // ---------- Plot main speed chart (single stop marker per station, H callouts restored) ----------
     function plotMainSpeedChart(data) {
       const ctx = document.getElementById("speedChart").getContext("2d");
       if (mainSpeedChart) mainSpeedChart.destroy();
@@ -597,13 +619,14 @@
       const labelsSub = timeLabels.slice(startIndexUsed, endIndexUsed + 1);
       const speedsSub = speeds.slice(startIndexUsed, endIndexUsed + 1);
 
-      // map first index of each station within visible range to ensure single label
+      // first index per station inside visible range
       const firstIndexMap = {};
       for (let i = startIndexUsed; i <= endIndexUsed; i++) {
         const st = stationCodes[i] || "";
         if (st && firstIndexMap[st] === undefined) firstIndexMap[st] = i - startIndexUsed;
       }
 
+      // compute MPS exceed info
       mpsMaxInfo = null;
       const mpsVal = getMpsValue();
       if (mpsVal) {
@@ -614,7 +637,7 @@
         if (maxIdxLocal != null) mpsMaxInfo = { idx: maxIdxLocal, speed: maxSpeedAbove };
       }
 
-      // H scatter (use mappedIdx)
+      // H scatter dataset
       const hScatter = [];
       hEvents.forEach(ev => {
         if (typeof ev.mappedIdx !== "number") return;
@@ -631,7 +654,7 @@
         }
       });
 
-      // single stop markers (one per station stop at y=0)
+      // single stop markers (0 speed) - one per station
       const stopMarkers = [];
       stoppageInfoList.forEach(si => {
         if (typeof si.stopIndex === "number") {
@@ -645,10 +668,12 @@
       const datasets = [{
         label: "Speed (km/h)",
         data: speedsSub,
-        borderWidth: 2,
-        tension: 0.3,
+        borderWidth: 3,
+        tension: 0.25,
         pointRadius: 0,
         borderColor: DEFAULT_COLOR,
+        backgroundColor: DEFAULT_COLOR,
+        spanGaps: true,
         segment: {
           borderColor: ctxSeg => {
             const mps = getMpsValue();
@@ -664,12 +689,12 @@
           label: "H events",
           data: hScatter.map(p => ({ x: p.x, y: p.y, meta: p.meta })),
           showLine: false,
-          pointRadius: 6,
-          pointHoverRadius: 8,
+          pointRadius: 7,
+          pointHoverRadius: 9,
           pointStyle: 'rectRot',
           parsing: false,
-          borderColor: 'red',
-          backgroundColor: 'red'
+          borderColor: '#d62828',
+          backgroundColor: '#d62828'
         });
       }
 
@@ -678,16 +703,14 @@
           label: "Stops (0 km/h)",
           data: stopMarkers.map(s => ({ x: s.x, y: s.y, meta: s.meta })),
           showLine: false,
-          pointRadius: 7,
+          pointRadius: 9,
           pointStyle: 'circle',
           parsing: false,
           borderColor: '#111827',
           backgroundColor: '#ffffff',
-          borderWidth: 1.5
+          borderWidth: 2
         });
       }
-
-      const showLabels = true; // we want single station labels under stops
 
       mainSpeedChart = new Chart(ctx, {
         type: "line",
@@ -698,15 +721,15 @@
           layout: { padding: { left: 12, right: 12, top: 12, bottom: 72 } },
           scales: {
             x: {
-              title: { display: true, text: "Logging Time" },
+              title: { display: true, text: "Logging Time", font: { weight: "900", size: 14 }, color: "#0b1220" },
               ticks: {
                 autoSkip: true,
                 maxRotation: 60,
                 minRotation: 25,
-                padding: 6,
+                padding: 8,
+                font: { weight: "700", size: 12 },
+                color: "#0b1220",
                 callback: function(value, index) {
-                  if (!showLabels) return "";
-                  // return station name only for the first index of that station (avoid clutter)
                   const globalIdx = startIndexUsed + index;
                   const st = stationCodes[globalIdx] || "";
                   if (!st) return "";
@@ -714,18 +737,18 @@
                   return "";
                 }
               },
-              grid: { color: '#eef2f6' },
+              grid: { color: '#e6eef5', lineWidth: 1.2 },
               offset: true
             },
             y: {
-              title: { display: true, text: "Speed (km/h)" },
+              title: { display: true, text: "Speed (km/h)", font: { weight: "900", size: 14 }, color: "#0b1220" },
               beginAtZero: true,
-              ticks: { color: '#111827' },
-              grid: { color: '#eef2f6' }
+              ticks: { color: '#0b1220', font: { weight: "700", size: 12 } },
+              grid: { color: '#e6eef5', lineWidth: 1.2 }
             }
           },
           plugins: {
-            legend: { display: true },
+            legend: { display: true, labels: { font: { weight: "800", size: 12 } } },
             tooltip: {
               mode: "nearest",
               intersect: true,
@@ -762,6 +785,7 @@
       mainSpeedChart.update();
     }
 
+    // ---------- Distance first 10 km (BFT/BPT) ----------
     function plotDistanceFirst10Km(data) {
       const ctx = document.getElementById("distance10Chart").getContext("2d");
       if (distance10Chart) distance10Chart.destroy();
@@ -788,18 +812,19 @@
 
       distance10Chart = new Chart(ctx, {
         type: "line",
-        data: { labels: distFiltered, datasets: [{ label: "Speed (km/h)", data: speedFiltered, borderWidth: 2, tension: 0.3, pointRadius: 0 }] },
+        data: { labels: distFiltered, datasets: [{ label: "Speed (km/h)", data: speedFiltered, borderWidth: 3, tension: 0.25, pointRadius: 0, borderColor: "#0b5ed7" }] },
         options: {
           responsive: true,
           maintainAspectRatio: false,
           layout: { padding: { bottom: 32 } },
           scales: {
-            x: { title: { display: true, text: "Distance from Start (km)" }, ticks: { callback: function(value) { const lbl = this.getLabelForValue(value); const num = parseFloat(lbl); return isNaN(num) ? lbl : num.toFixed(2); } }, grid: { color: '#eef2f6' } },
-            y: { title: { display: true, text: "Speed (km/h)" }, beginAtZero: true, grid: { color: '#eef2f6' } }
+            x: { title: { display: true, text: "Distance from Start (km)", font: { weight: "900" } }, ticks: { callback: function(value) { const lbl = this.getLabelForValue(value); const num = parseFloat(lbl); return isNaN(num) ? lbl : num.toFixed(2); }, font: { weight: "700" }, color: "#0b1220" }, grid: { color: '#e6eef5' } },
+            y: { title: { display: true, text: "Speed (km/h)", font: { weight: "900" } }, beginAtZero: true, ticks: { font: { weight: "700" } }, grid: { color: '#e6eef5' } }
           },
           plugins: { legend: { display: true }, tooltip: { mode: "index", intersect: false } }
         }
       });
+      distance10Chart.update();
 
       const infoDiv = document.getElementById("bftBptInfo");
       let html = "";
@@ -816,7 +841,7 @@
       infoDiv.innerHTML = html;
     }
 
-    // stoppage charts: 3.0 km window, ticks every 100 m, H markers + home signal image + 3.0 km in summary
+    // ---------- Stoppage charts (3.0 km window, 100 m ticks, home-signal image & H badges) ----------
     function plotStoppageSegmentCharts(data) {
       const { distanceKm, speeds, stoppageIndices, stationCodes, timeLabels } = data;
       const container = document.getElementById("stoppageCharts");
@@ -826,21 +851,19 @@
       stoppageChartsInstances = [];
       stoppageInfoList = [];
 
-      const windowKm = 3.0; // changed as requested
+      const windowKm = 3.0;
       const maxM = windowKm * 1000;
 
       if (!stoppageIndices.length) {
         const msg = document.createElement("div");
         msg.textContent = "No stoppages detected (speed not going to 0).";
-        msg.style.fontSize = "0.85rem";
-        msg.style.color = "#6b7280";
+        msg.style.fontSize = "0.95rem";
+        msg.style.color = "#374151";
         container.appendChild(msg);
         return;
       }
 
-      // preload home image
-      const homeImg = new Image();
-      homeImg.src = HOME_SIGNAL_SRC;
+      const homeImgDataUrl = HOME_SIGNAL_DATAURL;
 
       stoppageIndices.forEach((stopIdx, index) => {
         const stopDist = distanceKm[stopIdx];
@@ -924,10 +947,10 @@
         const hSpeedsText = hSpeedsForThisStop.length ? hSpeedsForThisStop.map(s => `${s.toFixed(1)}`).join(", ") : "-";
 
         callouts.innerHTML =
-          `<div><span class="label">3.0 km before:</span> ${s3000.speed.toFixed(1)} km/h (at ${s3000.dist.toFixed(3)} km)</div>` +
-          `<div><span class="label">1.5 km before:</span> ${s1500.speed.toFixed(1)} km/h (at ${s1500.dist.toFixed(3)} km)</div>` +
-          `<div><span class="label">1 km before:</span> ${s1000.speed.toFixed(1)} km/h (at ${s1000.dist.toFixed(3)} km)</div>` +
-          `<div><span class="label">100 m before:</span> ${s100.speed.toFixed(1)} km/h (at ${s100.dist.toFixed(3)} km)</div>` +
+          `<div><span class="label">3.0 km before:</span> ${s3000.speed.toFixed(1)} km/h</div>` +
+          `<div><span class="label">1.5 km before:</span> ${s1500.speed.toFixed(1)} km/h</div>` +
+          `<div><span class="label">1 km before:</span> ${s1000.speed.toFixed(1)} km/h</div>` +
+          `<div><span class="label">100 m before:</span> ${s100.speed.toFixed(1)} km/h</div>` +
           `<div><span class="label">H Speed:</span> ${hSpeedsText} km/h</div>` +
           `<div><span class="label">Stop:</span> ${stopTime}, <span class="label">Start:</span> ${startTime}</div>`;
 
@@ -939,10 +962,11 @@
         const datasets = [{
           label: "Speed (km/h)",
           data: speedData,
-          borderWidth: 2,
-          tension: 0.2,
+          borderWidth: 3,
+          tension: 0.25,
           pointRadius: 0,
-          parsing: false
+          parsing: false,
+          borderColor: "#0b5ed7"
         }];
 
         if (hMarkers.length) {
@@ -950,10 +974,10 @@
             label: "H events",
             data: hMarkers.map(h => ({ x: h.x, y: h.y, meta: h.meta })),
             showLine: false,
-            pointRadius: 6,
+            pointRadius: 8,
             pointStyle: 'diamond',
-            borderColor: 'red',
-            backgroundColor: 'red',
+            borderColor: '#d62828',
+            backgroundColor: '#d62828',
             parsing: false
           });
         }
@@ -966,8 +990,8 @@
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-              x: { type: "linear", title: { display: true, text: "Distance from Stoppage (m)" }, reverse: true, min: 0, max: maxM, ticks: { stepSize: 100, callback: function(v){ return `${Math.round(v)} m`; } } },
-              y: { title: { display: true, text: "Speed (km/h)" }, beginAtZero: true }
+              x: { type: "linear", title: { display: true, text: "Distance from Stoppage (m)", font: { weight: "900" } }, reverse: true, min: 0, max: maxM, ticks: { stepSize: 100, callback: function(v){ return `${Math.round(v)} m`; }, font: { weight: "700" }, color: "#0b1220" } },
+              y: { title: { display: true, text: "Speed (km/h)", font: { weight: "900" } }, beginAtZero: true, ticks: { font: { weight: "700" }, color: "#0b1220" } }
             },
             plugins: {
               legend: { display: false },
@@ -1003,36 +1027,45 @@
                   try {
                     const px = xScale.getPixelForValue(ptRaw.x);
                     const py = yScale.getPixelForValue(ptRaw.y);
-                    // draw small home image below the axis (so it's visually on x-axis area)
-                    const w = 20;
-                    const h = 36;
+                    // draw small home image below the axis
+                    const w = 22;
+                    const h = 40;
                     const destX = px - w/2;
                     const destY = yScale.bottom - h - 6;
-                    // draw image (if loaded) or schedule draw onload
-                    const img = new Image();
-                    img.src = HOME_SIGNAL_SRC;
-                    if (img.complete) {
-                      ctx.drawImage(img, destX, destY, w, h);
+
+                    if (HOME_SIGNAL_DATAURL) {
+                      const img = new Image();
+                      img.src = HOME_SIGNAL_DATAURL;
+                      if (img.complete) {
+                        ctx.drawImage(img, destX, destY, w, h);
+                      } else {
+                        img.onload = function() { try { ctx.drawImage(img, destX, destY, w, h); } catch(e){} };
+                      }
                     } else {
-                      img.onload = function() {
-                        try { ctx.drawImage(img, destX, destY, w, h); } catch(e) {}
-                      };
+                      // fallback: draw simple black marker / triangle if image unavailable
+                      ctx.fillStyle = "#111827";
+                      ctx.beginPath();
+                      ctx.moveTo(destX + w/2, destY + 4);
+                      ctx.lineTo(destX + w - 4, destY + h - 4);
+                      ctx.lineTo(destX + 4, destY + h - 4);
+                      ctx.closePath();
+                      ctx.fill();
                     }
 
-                    // draw small speed badge above H marker
+                    // draw bold speed badge above H marker
                     if (ptRaw.y != null) {
                       const speedText = Math.round(ptRaw.y).toString();
-                      const badgeW = Math.min(60, ctx.measureText(speedText).width + 12);
-                      const badgeH = 20;
+                      const badgeW = Math.min(66, ctx.measureText(speedText).width + 16);
+                      const badgeH = 26;
                       const bx = px - badgeW/2;
-                      const by = py - badgeH - 8;
+                      const by = py - badgeH - 10;
                       ctx.fillStyle = "#ffffff";
-                      roundRect(ctx, bx, by, badgeW, badgeH, 6, true);
-                      ctx.strokeStyle = "rgba(0,0,0,0.75)";
-                      ctx.lineWidth = 0.9;
-                      roundRectStroke(ctx, bx, by, badgeW, badgeH, 6);
+                      roundRect(ctx, bx, by, badgeW, badgeH, 8, true);
+                      ctx.strokeStyle = "rgba(0,0,0,0.85)";
+                      ctx.lineWidth = 1.4;
+                      roundRectStroke(ctx, bx, by, badgeW, badgeH, 8);
                       ctx.fillStyle = "#111827";
-                      ctx.font = "11px system-ui, Arial";
+                      ctx.font = "bold 12px system-ui, Arial";
                       ctx.textAlign = "center";
                       ctx.textBaseline = "middle";
                       ctx.fillText(speedText, bx + badgeW/2, by + badgeH/2);
@@ -1048,7 +1081,7 @@
       });
     }
 
-    // ---------- summary & irregularities logic ----------
+    // ---------- Performance summary & Station-wise table ----------
     function buildPerfSummary(data) {
       const tbody = document.querySelector("#perfSummaryTable tbody");
       tbody.innerHTML = "";
@@ -1137,19 +1170,19 @@
       });
     }
 
-    // computeIrregularities includes H-speed rule (>60 km/h)
+    // ---------- Irregularities: include H speed > 60 rule and highlight red ----------
     function computeIrregularities() {
       const issues = [];
 
-      // 1) Speed @1000 m rule
+      // Speed @1000 m rule
       stoppageInfoList.forEach(info => {
         if (info.s1000.speed > LIMIT_1000M) {
-          issues.push(`Station ${info.station}: Speed @1000 m = ${info.s1000.speed.toFixed(2)} km/h (should be ≤ ${LIMIT_1000M})`);
+          issues.push({ text: `Station ${info.station}: Speed @1000 m = ${info.s1000.speed.toFixed(2)} km/h (should be ≤ ${LIMIT_1000M})`, type: "normal" });
         }
       });
 
-      // 2) H-speed rule (group H events by station and take maximum H speed)
-      const hStationSpeedMap = {}; // station -> max H speed
+      // H-speed > 60 rule
+      const hStationSpeedMap = {};
       hEvents.forEach(ev => {
         const st = ev.stationCode || null;
         if (!st) return;
@@ -1163,11 +1196,11 @@
       Object.keys(hStationSpeedMap).forEach(st => {
         const sp = hStationSpeedMap[st];
         if (sp > 60) {
-          issues.push(`Station ${st}: H speed ${sp.toFixed(1)} km/h (exceeds 60 km/h limit)`);
+          issues.push({ text: `Station ${st}: H speed ${sp.toFixed(1)} km/h (exceeds 60 km/h limit)`, type: "hviolation" });
         }
       });
 
-      // 3) MPS violations (existing)
+      // MPS violations
       const mps = getMpsValue();
       if (mps && rawData) {
         const { distanceKm, speeds } = rawData;
@@ -1187,14 +1220,13 @@
           }
         }
         if (totalViolSec > 0 && totalViolKm > 0) {
-          issues.push(`MPS Violation: Speed exceeded MPS ${mps.toFixed(1)} km/h for ${totalViolSec} s over ${totalViolKm.toFixed(3)} km.`);
+          issues.push({ text: `MPS Violation: Speed exceeded MPS ${mps.toFixed(1)} km/h for ${totalViolSec} s over ${totalViolKm.toFixed(3)} km.`, type: "normal" });
         }
       }
 
       return issues;
     }
 
-    // printIrregularities: highlights H-speed violations in red (bold)
     function printIrregularities() {
       if (!rawData) { alert("Please load CSV and generate report first."); return; }
       const heading = document.getElementById("mainHeading").textContent;
@@ -1210,11 +1242,10 @@
       } else {
         irHTML = "<ul>";
         issues.forEach(it => {
-          const isHViolation = /H speed|exceeds 60\s*km\/h/i.test(it);
-          if (isHViolation) {
-            irHTML += `<li style="color:#b91c1c;font-weight:700">${escapeHtml(it)}</li>`;
+          if (it.type === "hviolation") {
+            irHTML += `<li style="color:#b91c1c;font-weight:900">${escapeHtml(it.text)}</li>`;
           } else {
-            irHTML += `<li>${escapeHtml(it)}</li>`;
+            irHTML += `<li style="font-weight:700">${escapeHtml(it.text)}</li>`;
           }
         });
         irHTML += "</ul>";
@@ -1227,11 +1258,11 @@
         <html><head><title>Irregularities - ${escapeHtml(heading)}</title>
         <style>
           body{font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin:20px; color:#111827}
-          h1{font-size:18px;margin-bottom:8px}
-          .meta{font-size:13px;color:#374151;margin-bottom:12px}
-          .ir{font-size:13px}
-          .cli{font-size:13px;color:#111827;margin-top:12px;white-space:pre-wrap;border:1px solid #e5e7eb;padding:8px;background:#fafafa}
-          .footer{margin-top:30px;font-size:12px;color:#6b7280}
+          h1{font-size:20px;margin-bottom:8px;font-weight:900}
+          .meta{font-size:14px;color:#374151;margin-bottom:12px;font-weight:700}
+          .ir{font-size:13px;margin-top:8px}
+          .cli{font-size:13px;color:#111827;margin-top:12px;white-space:pre-wrap;border:1px solid #e5e7eb;padding:10px;background:#fafafa;font-weight:700}
+          .footer{margin-top:30px;font-size:12px;color:#6b7280;font-weight:700}
           @media print { .no-print{ display:none } }
         </style>
         </head><body>
@@ -1502,9 +1533,10 @@
       });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", async () => {
       updateMainHeading();
       setupButtons();
+      HOME_SIGNAL_DATAURL = await loadHomeSignalDataUrl().catch(()=>null);
     });
   </script>
 </body>
